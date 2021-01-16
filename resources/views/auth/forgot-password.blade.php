@@ -12,8 +12,13 @@
                         <div class="brand-wrapper">
                             <img src="/img/logo.png" alt="logo" class="logo">
                         </div>
-                        <p class="login-card-description">Sign into your account</p>
-                        <form method="POST" action="{{ route('login') }}">
+                        <p class="login-card-description">Password Reset</p>
+                        @if (session('status'))
+                            <div class="alert alert-success" role='alert'>
+                                {{ session('status') }}
+                            </div>
+                        @endif
+                        <form method="POST" action="{{ route('password.email') }}">
                             @csrf
                             <div class="form-group">
                                 <label for="email" class="sr-only">Email</label>
@@ -24,19 +29,10 @@
                                     </span>
                                 @enderror
                             </div>
-                            <div class="form-group mb-4">
-                                <label for="password" class="sr-only">Password</label>
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password"  autocomplete="new-password" placeholder="Password">
-                                @error('password')
-                                <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                            <input name="login" id="login" class="btn btn-block login-btn mb-4" type="submit" value="Login">
+
+                            <input name="login" id="login" class="btn btn-block login-btn mb-4" type="submit" value="Submit">
                         </form>
-                        <a href="{{ route('password.request') }}" class="forgot-password-link">Forgot password?</a>
-                        <p class="login-card-footer-text">Don't have an account? <a href="{{ route('register') }}" class="text-reset">Register here</a></p>
+                        <p class="login-card-footer-text">Not anymore? <a href="{{ route('register') }}" class="text-info text-reset">Sign up</a> or <a href="{{ route('login') }}" class="text-reset">Sign in</a></p>
                         <nav class="login-card-footer-nav">
                             <a href="#!">Terms of use.</a>
                             <a href="#!">Privacy policy</a>
