@@ -18,7 +18,6 @@
                             <div class="form-group">
                                 <label for="name" class="sr-only">Name</label>
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Name">
-
                             </div>
                             @error('name')
                             <span class="invalid-feedback" role="alert">

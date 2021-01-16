@@ -8,16 +8,6 @@
                     <img src="/img/login.jpg" alt="login" class="login-card-img">
                 </div>
                 <div class="col-md-7">
-                    @if($errors->any())
-                        @foreach ($errors->all() as $error)
-                            <h1>{{ $error }}</h1>
-                        @endforeach
-                    @endif
-                    @error('email')
-                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                    @enderror
                     <div class="card-body">
                         <div class="brand-wrapper">
                             <img src="/img/logo.png" alt="logo" class="logo">
@@ -27,7 +17,7 @@
                             @csrf
                             <div class="form-group">
                                 <label for="email" class="sr-only">Email</label>
-                                <input type="email" name="email" id="email" class="form-control" placeholder="Email address">
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}"  autocomplete="email" placeholder="Email address">
                                 @error('email')
                                 <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -36,7 +26,7 @@
                             </div>
                             <div class="form-group mb-4">
                                 <label for="password" class="sr-only">Password</label>
-                                <input type="password" name="password" id="password" class="form-control" placeholder="***********">
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password"  autocomplete="new-password" placeholder="Password">
                                 @error('password')
                                 <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
