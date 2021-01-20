@@ -21,3 +21,5 @@ Route::get('/home', function () {
 return view('home');
 })->middleware(['auth','verified']);
 
+
+Route::get('/login/github', [LoginController::class, 'github']);
