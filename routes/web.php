@@ -23,4 +23,4 @@ return view('home');
 
 
 Route::get('/login/github', [LoginController::class, 'github']);
-Route::get('/login/github/redirect', [LoginController::class, 'githubRedirect']);
+Route::get('/login/github/redirect', [LoginController::class, 'githubRedirect'])->name('github.redirect');
