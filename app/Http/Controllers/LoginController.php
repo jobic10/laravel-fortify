@@ -24,7 +24,8 @@ class LoginController extends Controller
         ],[
             'name' => $github->name,
             'password' => '12345678',
-            'username' => mt_rand(1,22222222)
+            'username' => mt_rand(1,22222222),
+            'email_verified_at' => now(),
         ]);
         Auth::login($user, true);
         return redirect('/home');
