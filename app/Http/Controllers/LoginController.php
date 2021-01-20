@@ -15,5 +15,7 @@ class LoginController extends Controller
 
     public function githubRedirect(){
         //Get Oauth back from github authentication
+        $user = Socialite::driver('github')->user();
+        dd($user);
     }
 }
