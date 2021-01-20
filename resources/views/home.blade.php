@@ -5,6 +5,7 @@
             <div class="row no-gutters">
                 <div class="col-md-12">
                     <div class="card-body">
+                        <p class="alert alert-success">Welcome {{ auth()->user()->name }}</p>
                         @if (!auth()->user()->two_factor_secret)
                             <p class="alert alert-warning">You are yet to enable 2fa</p>
                             <form action="{{ url('user/two-factor-authentication') }}" method="post">
