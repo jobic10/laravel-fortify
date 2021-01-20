@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class LoginController extends Controller
 {
     public function github(){
-
+        //Send User's Request to GitHub
     }
 
     public function githubRedirect(){
