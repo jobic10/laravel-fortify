@@ -22,5 +22,5 @@ return view('home');
 })->middleware(['auth','verified']);
 
 
-Route::get('/login/github', [LoginController::class, 'github']);
+Route::get('/login/github', [LoginController::class, 'github'])->name('github.login');
 Route::get('/login/github/redirect', [LoginController::class, 'githubRedirect'])->name('github.redirect');
