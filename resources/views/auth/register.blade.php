@@ -13,7 +13,7 @@
                             <img src="/img/logo.png" alt="logo" class="logo">
                         </div>
                         <p class="login-card-description">Register a new account</p>
-                        <form method="POST" action="{{ route('register') }}">
+                        <form method="POST" action="{{ route('register') }}" x-data="{role_id:3}">
                             @csrf
                             <div class="form-group">
                                 <label for="name" class="sr-only">Name</label>
@@ -71,7 +71,7 @@
                             </div>
 
 
-                            <div class="form-group">
+                            <div class="form-group" x-show="role_id == 2">
                                 <label for="address" class="sr-only">Student Address</label>
                                 <input id="address" type="text" class="form-control @error('address') is-invalid @enderror" name="address" value="{{ old('address') }}" required autocomplete="address" autofocus placeholder="address">
                             </div>
