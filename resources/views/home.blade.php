@@ -37,6 +37,12 @@
                                 </button>
                                 </form>
                         @endif
+                        <hr>
+                        <br>
+                        @if (auth()->user()->role_id ==1)
+                            <a href="{{ route('admin.users.index') }}"></a>
+
+                        @endif
                         <br>
                         <form action="{{ route('logout') }}" method="post">
                         @csrf
