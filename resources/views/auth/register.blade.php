@@ -81,6 +81,17 @@
                                     </span>
                             @enderror
 
+
+                            <div class="form-group" x-show="role_id == 3">
+                                <label for="qualification" class="sr-only">Staff Qualifications</label>
+                                <input id="qualification" type="text" class="form-control @error('qualification') is-invalid @enderror" name="qualification" value="{{ old('qualification') }}" required autocomplete="qualification" autofocus placeholder="Staff Qualifications">
+                            </div>
+                            @error('qualification')
+                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                            @enderror
+
                             <input name="register" id="register" class="btn btn-block login-btn mb-4" type="submit" value="Register">
                         </form>
                         <a href="{{ route('password.request') }}" class="forgot-password-link">Forgot password?</a>
