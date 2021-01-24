@@ -31,7 +31,7 @@ class CreateNewUser implements CreatesNewUsers
                 Rule::unique(User::class),
             ],
             'register_as' => ['required', 'integer'],
-            'student_license_number' => 'required_if:register_as,2',
+            'license' => 'required_if:register_as,2',
             'password' => $this->passwordRules(),
         ])->validate();
 $data = [

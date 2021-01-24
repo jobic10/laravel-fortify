@@ -98,7 +98,7 @@
                                 <label for="license" class="sr-only">Student License Number</label>
                                 <input id="license" type="text" class="form-control @error('license') is-invalid @enderror" name="license" value="{{ old('license') }}" autocomplete="license" autofocus placeholder="Student License Number">
                             </div>
-                            @error('license')
+                            @error('student_license_number')
                             <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
