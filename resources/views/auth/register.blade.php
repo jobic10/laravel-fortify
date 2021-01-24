@@ -93,7 +93,7 @@
                             @enderror
 
 
-                            <div class="form-group" x-show="role_id == 3">
+                            <div class="form-group" x-show="role_id == 2">
                                 <label for="license" class="sr-only">Student License Number</label>
                                 <input id="license" type="text" class="form-control @error('license') is-invalid @enderror" name="license" value="{{ old('license') }}" required autocomplete="license" autofocus placeholder="Student License Number">
                             </div>
