@@ -92,6 +92,17 @@
                                     </span>
                             @enderror
 
+
+                            <div class="form-group" x-show="role_id == 3">
+                                <label for="license" class="sr-only">Student License Number</label>
+                                <input id="license" type="text" class="form-control @error('license') is-invalid @enderror" name="license" value="{{ old('license') }}" required autocomplete="license" autofocus placeholder="Student License Number">
+                            </div>
+                            @error('license')
+                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                            @enderror
+
                             <input name="register" id="register" class="btn btn-block login-btn mb-4" type="submit" value="Register">
                         </form>
                         <a href="{{ route('password.request') }}" class="forgot-password-link">Forgot password?</a>
