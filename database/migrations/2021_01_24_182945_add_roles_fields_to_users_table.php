@@ -29,7 +29,10 @@ class AddRolesFieldsToUsersTable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            //
+            $table->dropColumn('role_id');
+            $table->dropColumn('student_address');
+            $table->dropColumn('student_license_number');
+            $table->dropColumn('teacher_qualifications');
         });
     }
 }
