@@ -32,6 +32,7 @@ class CreateNewUser implements CreatesNewUsers
             ],
             'register_as' => ['required', 'integer'],
             'license' => 'required_if:register_as,2',
+            'address' => 'required_if:register_as,2',
             'password' => $this->passwordRules(),
         ])->validate();
 $data = [
