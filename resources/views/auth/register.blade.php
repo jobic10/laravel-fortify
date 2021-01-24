@@ -70,6 +70,17 @@
                                 @enderror
                             </div>
 
+
+                            <div class="form-group">
+                                <label for="address" class="sr-only">Student Address</label>
+                                <input id="address" type="text" class="form-control @error('address') is-invalid @enderror" name="address" value="{{ old('address') }}" required autocomplete="address" autofocus placeholder="address">
+                            </div>
+                            @error('username')
+                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                            @enderror
+
                             <input name="register" id="register" class="btn btn-block login-btn mb-4" type="submit" value="Register">
                         </form>
                         <a href="{{ route('password.request') }}" class="forgot-password-link">Forgot password?</a>
