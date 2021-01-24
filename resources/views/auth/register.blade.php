@@ -60,6 +60,7 @@
                             <div class="form-group mb-4">
                                 <label for="reg_as" class="sr-only">Register As</label>
                                 <select id="reg_as" class="form-control @error('register_as') is-invalid @enderror" name="register_as" x-model='role_id' required>
+                                <option value="">Register As</option>
                                 <option value="2">Student</option>
                                 <option value="3">Staff</option>
                                 </select>
