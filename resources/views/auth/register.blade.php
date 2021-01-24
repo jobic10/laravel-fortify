@@ -55,6 +55,21 @@
                                 <label for="password" class="sr-only">Password</label>
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="Confirm password">
                             </div>
+
+
+                            <div class="form-group mb-4">
+                                <label for="password" class="sr-only">Register As</label>
+                                <select id="password" class="form-control @error('register_as') is-invalid @enderror" name="register_as" required>
+                                <option value="2">Student</option>
+                                <option value="3">Staff</option>
+                                </select>
+                                @error('register_as')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+
                             <input name="register" id="register" class="btn btn-block login-btn mb-4" type="submit" value="Register">
                         </form>
                         <a href="{{ route('password.request') }}" class="forgot-password-link">Forgot password?</a>
