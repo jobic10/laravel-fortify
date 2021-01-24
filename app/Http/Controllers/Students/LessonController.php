@@ -14,7 +14,8 @@ class LessonController extends Controller
      */
     public function index()
     {
-        //
+        echo "Students: Hello From Lesson Controller";
+
     }
 
     /**
