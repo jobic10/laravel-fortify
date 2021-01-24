@@ -26,7 +26,8 @@ class AddNameToRolesTable extends Migration
     public function down()
     {
         Schema::table('roles', function (Blueprint $table) {
-            //
+            $table->dropColumn('name');
+
         });
     }
 }
