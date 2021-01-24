@@ -21,6 +21,12 @@ Route::get('/home', function () {
 return view('home');
 })->middleware(['auth','verified']);
 
+Route::group(['middleware' => 'auth'], function(){
+    Route::group(['middleware' => 'role:student', 'prefix' => 'student', 'as' => 'student'], function(){
+        Route::resource('lessons', App\Http\Controllers\Students\LessonController::class);
+    });
+
+});
 
 Route::get('/login/github', [LoginController::class, 'github'])->name('github.login');
 Route::get('/login/github/redirect', [LoginController::class, 'githubRedirect'])->name('github.redirect');
