@@ -40,11 +40,11 @@
                         <hr>
                         <br>
                         @if (auth()->user()->role_id ==1)
-                            <a href="{{ route('admin.users.index') }}"></a>
+                            <a href="{{ route('admin.users.index') }}">Admin</a>
                         @elseif (auth()->user()->role_id == 2)
-                        <a href="{{ route('student.lessons.index') }}"></a>
+                        <a href="{{ route('student.lessons.index') }}">Student</a>
                         @elseif (auth()->user()->role_id == 3)
-                        <a href="{{ route('staff.courses.index') }}"></a>
+                        <a href="{{ route('staff.courses.index') }}">Staff</a>
                         @else
                         Where are you from?
                         @endif
