@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Fortify\Fortify;
+use App\Models\Role;
 
 class FortifyServiceProvider extends ServiceProvider
 {
@@ -49,7 +50,8 @@ class FortifyServiceProvider extends ServiceProvider
             return view("auth.login");
         });
         Fortify::registerView(function(){
-            return view("auth.register");
+            $roles = Role::all();
+            return view("auth.register", ['roles' => $roles]);
         });
         Fortify::requestPasswordResetLinkView(function(){
             return view('auth.forgot-password');
