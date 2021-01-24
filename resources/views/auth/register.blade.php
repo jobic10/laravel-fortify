@@ -58,8 +58,8 @@
 
 
                             <div class="form-group mb-4">
-                                <label for="password" class="sr-only">Register As</label>
-                                <select id="password" class="form-control @error('register_as') is-invalid @enderror" name="register_as" required>
+                                <label for="reg_as" class="sr-only">Register As</label>
+                                <select id="reg_as" class="form-control @error('register_as') is-invalid @enderror" name="register_as" required>
                                 <option value="2">Student</option>
                                 <option value="3">Staff</option>
                                 </select>
