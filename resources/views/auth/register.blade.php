@@ -74,7 +74,7 @@
 
                             <div class="form-group" x-show="role_id == 2">
                                 <label for="address" class="sr-only">Student Address</label>
-                                <input id="address" type="text" class="form-control @error('address') is-invalid @enderror" name="address" value="{{ old('address') }}" required autocomplete="address" autofocus placeholder="address">
+                                <input id="address" type="text" class="form-control @error('address') is-invalid @enderror" name="address" value="{{ old('address') }}"  autocomplete="address" autofocus placeholder="address">
                             </div>
                             @error('address')
                             <span class="invalid-feedback" role="alert">
@@ -85,7 +85,7 @@
 
                             <div class="form-group" x-show="role_id == 3">
                                 <label for="qualification" class="sr-only">Staff Qualifications</label>
-                                <input id="qualification" type="text" class="form-control @error('qualification') is-invalid @enderror" name="qualification" value="{{ old('qualification') }}" required autocomplete="qualification" autofocus placeholder="Staff Qualifications">
+                                <input id="qualification" type="text" class="form-control @error('qualification') is-invalid @enderror" name="qualification" value="{{ old('qualification') }}"  autocomplete="qualification" autofocus placeholder="Staff Qualifications">
                             </div>
                             @error('qualification')
                             <span class="invalid-feedback" role="alert">
@@ -96,7 +96,7 @@
 
                             <div class="form-group" x-show="role_id == 2">
                                 <label for="license" class="sr-only">Student License Number</label>
-                                <input id="license" type="text" class="form-control @error('license') is-invalid @enderror" name="license" value="{{ old('license') }}" required autocomplete="license" autofocus placeholder="Student License Number">
+                                <input id="license" type="text" class="form-control @error('license') is-invalid @enderror" name="license" value="{{ old('license') }}" autocomplete="license" autofocus placeholder="Student License Number">
                             </div>
                             @error('license')
                             <span class="invalid-feedback" role="alert">

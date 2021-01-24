@@ -30,19 +30,27 @@ class CreateNewUser implements CreatesNewUsers
                 'max:255',
                 Rule::unique(User::class),
             ],
-            'role_id' => ['required', 'int', 'min:1'],
+            // 'role_id' => ['required', 'int', 'min:1'],
             'password' => $this->passwordRules(),
         ])->validate();
-
-        return User::create([
-            'name' => $input['name'],
-            'username' => $input['username'],
-            'email' => $input['email'],
-            'password' => Hash::make($input['password']),
-            'teacher_qualifications' => $input['qualification'] ?? null,
-            'student_address'  => $input['address'] ?? null,
-            'student_license_number' => $input['license'] ?? null,
-            'role_id' => $input['register_as'],
-        ]);
+$data = [
+    'name' => $input['name'],
+    'username' => $input['username'],
+    'email' => $input['email'],
+    'password' => Hash::make($input['password']),
+    'teacher_qualifications' => $input['qualification'] ?? null,
+    'student_address'  => $input['address'] ?? null,
+    'student_license_number' => $input['license'] ?? null,
+    'role_id' => $input['register_as'],
+];
+if ($input['register_as'] == 2){
+    //Student
+    unset($data['teacher_qualifications']);
+}else{
+    //Staff
+    unset($data['student_address']);
+    unset($data['student_license_number']);
+}
+        return User::create($data);
     }
 }
