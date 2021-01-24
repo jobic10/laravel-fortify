@@ -43,7 +43,10 @@
                             <a href="{{ route('admin.users.index') }}"></a>
                         @elseif (auth()->user()->role_id == 2)
                         <a href="{{ route('student.lessons.index') }}"></a>
-
+                        @elseif (auth()->user()->role_id == 3)
+                        <a href="{{ route('staff.courses.index') }}"></a>
+                        @else
+                        Where are you from?
                         @endif
                         <br>
                         <form action="{{ route('logout') }}" method="post">
