@@ -41,6 +41,8 @@
                         <br>
                         @if (auth()->user()->role_id ==1)
                             <a href="{{ route('admin.users.index') }}"></a>
+                        @elseif (auth()->user()->role_id == 2)
+                        <a href="{{ route('student.lessons.index') }}"></a>
 
                         @endif
                         <br>
