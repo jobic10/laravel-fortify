@@ -13,7 +13,7 @@
                             <img src="/img/logo.png" alt="logo" class="logo">
                         </div>
                         <p class="login-card-description">Register a new account</p>
-                        <form method="POST" action="{{ route('register') }}" x-data="{role_id:3}">
+                        <form method="POST" action="{{ route('register') }}" x-data="{role_id:{{ old('register_as')?? 1 }}}">
                             @csrf
                             <div class="form-group">
                                 <label for="name" class="sr-only">Name</label>
