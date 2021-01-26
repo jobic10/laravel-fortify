@@ -39,14 +39,13 @@
                         @endif
                         <hr>
                         <br>
-                        @if (auth()->user()->role_id ==1)
-                            <a href="{{ route('admin.users.index') }}">Admin</a>
-                        @elseif (auth()->user()->role_id == 2)
+                        @can('manage-users')
+                        <a href="{{ route('admin.users.index') }}">Admin</a>
+                        @endcan
+                        @if (auth()->user()->role_id == 2)
                         <a href="{{ route('student.lessons.index') }}">Student</a>
                         @elseif (auth()->user()->role_id == 3)
                         <a href="{{ route('staff.courses.index') }}">Staff</a>
-                        @else
-                        Where are you from?
                         @endif
                         <br>
                         <form action="{{ route('logout') }}" method="post">
