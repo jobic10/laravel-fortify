@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class UserController extends Controller
 {
@@ -14,6 +15,7 @@ class UserController extends Controller
      */
     public function index()
     {
+        if (Gate::denies('manage-users'))abort(403);
         echo "Admin: Hello From User Controller";
     }
 
